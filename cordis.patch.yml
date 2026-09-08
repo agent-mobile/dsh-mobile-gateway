@@ -1,0 +1,50 @@
+# dsh-mobile-gateway patch layer.
+#
+# Applied into the `web` profile when the plugin is installed
+# (`dsh plugin --profile web add dsh-mobile-gateway`). A patch replaces the
+# targeted row's whole `config`, so each override restates every key it owns
+# (only the config block is replaced; the row's own `inject` list survives).
+#
+# Effects:
+#   1. webserver binds all interfaces — the mobile app can reach the host
+#      from the LAN without any command-line flag. Uninstalling the plugin
+#      removes this override and restores the loopback-only default.
+#   2. the official /api browser-trust fence is closed to loopback ONLY.
+#      Binding 0.0.0.0 would otherwise auto-trust every LAN IP literal
+#      (the SDK's own resolveLanTrust behavior) and expose the whole /api
+#      surface to the network with no authentication. With this override
+#      the local desktop browser keeps working (loopback is always
+#      trusted) while remote callers must use the token-gated /m/api.
+#      `--trusted-host` feeds the replaced expression, so the flag is
+#      intentionally inert under this plugin.
+#   3. attachment limits + connection body cap are raised together so the
+#      app can send large images (session.attachment). The two must stay in
+#      sync: the official /api route computes its required body capacity from
+#      maxMessageImageBytes (×4/3 base64 + 1 MiB headroom).
+#   4. The plugin row itself.
+
+- id: webserver
+  config:
+    host: '0.0.0.0'
+    # Restates the official row's expression; the row keeps its inject on
+    # webStartup, so `--port` keeps working. `--host` is intentionally NOT
+    # honored here: this plugin's contract is LAN exposure behind its token.
+    port: !!js ctx.webStartup.port ?? 3080
+
+- id: attachment-local
+  config:
+    maxImageBytes: 104857600
+    maxMessageImageBytes: 524288000
+    maxImagePixels: 200000000
+    maxImageDimension: 100000
+
+- id: connection
+  config:
+    # Fail-closed: loopback only. See effect 2 above.
+    trustedHosts: []
+    # >= ceil(524288000 × 4/3) + 1 MiB — see the attachment override above.
+    maxRequestBodyBytes: 750000000
+
+- insert:
+    - id: mobile-gateway
+      name: 'dsh-mobile-gateway'
