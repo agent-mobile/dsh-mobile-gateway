@@ -5,7 +5,7 @@
 > DeepSeek Harness（DSH）官方版的局域网访问插件：装一个插件，手机 App 直接连。
 > 不改 dsh 源码、不需要重新下载编译——`dsh plugin` 一条命令安装，`dsh web` 裸启动即可。
 
-**完整使用说明（配手机 App）见 [USAGE.md](USAGE.md)。**
+**完整使用说明（配手机 App）见 [USAGE.md](USAGE.md)。语音模式 / 实时转写 / 远程组网（蒲公英 · WireGuard）见 [VOICE-AND-NETWORK.md](VOICE-AND-NETWORK.md)。**
 
 ## 它解决什么问题
 

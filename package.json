@@ -31,7 +31,8 @@
     "README.md",
     "README.en.md",
     "USAGE.md",
-    "USAGE.en.md"
+    "USAGE.en.md",
+    "VOICE-AND-NETWORK.md"
   ],
   "dsh": {
     "engines": {

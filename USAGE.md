@@ -59,6 +59,8 @@
 
 ## 服务器端：三步安装
 
+> 语音模式 / 实时转写 / 远程组网（蒲公英 · WireGuard）见 [VOICE-AND-NETWORK.md](VOICE-AND-NETWORK.md)。
+
 ### 第 1 步：安装插件
 
 ```powershell

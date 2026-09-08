@@ -10,7 +10,7 @@
 
 Official `dsh web` listens on `127.0.0.1` only, and the official CLI refuses
 `--host 0.0.0.0`. This plugin opens LAN access using official extension points
-only. **Full usage guide (with the mobile app): [USAGE.en.md](USAGE.en.md).**
+only. **Full usage guide (with the mobile app): [USAGE.en.md](USAGE.en.md). Voice mode / live transcription / remote networking (in Chinese): [VOICE-AND-NETWORK.md](VOICE-AND-NETWORK.md).**
 
 | Concern | Mechanism |
 | --- | --- |
