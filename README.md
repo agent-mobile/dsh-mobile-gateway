@@ -31,7 +31,7 @@
 npm install -g @deepseek-ai/dsh
 
 # 2. 安装本插件（从 GitHub，一条命令）
-dsh plugin --profile web add github:elslky-cmyk/dsh-mobile-gateway
+dsh plugin --profile web add github:elskly-cmyk/dsh-mobile-gateway
 #   首次安装 pnpm 会询问是否允许构建本包（allowBuilds），按 dsh 的提示放行即可；
 #   开发调试:  dsh plugin --profile web add link:<本仓库路径>
 
