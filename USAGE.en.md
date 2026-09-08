@@ -29,7 +29,7 @@
 **1. Install the plugin**
 
 ```sh
-dsh plugin --profile web add github:elskly-cmyk/dsh-mobile-gateway
+dsh plugin --profile web add github:agent-mobile/dsh-mobile-gateway
 #   first git install: accept the build-script prompt (allowBuilds) that dsh
 #   prints. Dev checkout: dsh plugin --profile web add link:<repo path>
 ```

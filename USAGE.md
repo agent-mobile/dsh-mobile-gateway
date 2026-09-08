@@ -64,7 +64,7 @@
 ### 第 1 步：安装插件
 
 ```powershell
-dsh plugin --profile web add github:elskly-cmyk/dsh-mobile-gateway
+dsh plugin --profile web add github:agent-mobile/dsh-mobile-gateway
 #   首次安装 pnpm 会询问是否允许构建本包（allowBuilds），按 dsh 的提示放行即可
 dsh plugin --profile web add link:<本插件仓库路径>       # 开发调试用本地路径
 ```

@@ -28,7 +28,7 @@ only. **Full usage guide (with the mobile app): [USAGE.en.md](USAGE.en.md). Voic
 
 ```sh
 npm install -g @deepseek-ai/dsh
-dsh plugin --profile web add github:elskly-cmyk/dsh-mobile-gateway
+dsh plugin --profile web add github:agent-mobile/dsh-mobile-gateway
 #   first git install: pnpm asks to allow this package's build script —
 #   accept the dsh prompt once. Dev checkout: add link:<repo path> instead.
 # set the token (see below), then:
